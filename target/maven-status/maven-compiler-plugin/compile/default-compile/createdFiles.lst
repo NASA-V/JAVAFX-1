@@ -1,4 +1,7 @@
+com\example\demo\inputdialogs.class
 module-info.class
 com\example\demo\HelloApplication.class
+com\example\demo\Series_Names.class
 com\example\demo\All_Series.class
 com\example\demo\HelloController.class
+com\example\demo\inputdialogs$1.class
