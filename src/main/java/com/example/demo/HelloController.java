@@ -20,6 +20,8 @@ import static java.sql.DriverManager.getConnection;
 public class HelloController {
 
     public final String Connection_String = "jdbc:sqlite::memory:";
+    public Label lblSeries;
+    public Label lblDatasets;
     private int counter;
 
 
@@ -187,6 +189,10 @@ public class HelloController {
     void GenerateGraph(ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.NONE, "you clicked add series", ButtonType.OK);
         alert.showAndWait();
+        TableView.TableViewSelectionModel selectionModel = tblDataset.getSelectionModel();
+//        TableViewSelectionModel<Person> selectionModel = tableView.getSelectionModel();
+        selectionModel.setSelectionMode(SelectionMode.MULTIPLE);
+
     }
 
     //btncancel click
