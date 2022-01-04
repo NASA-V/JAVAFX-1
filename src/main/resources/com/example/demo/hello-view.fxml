@@ -84,10 +84,10 @@
         <GridPane.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="300.0" />
         </GridPane.margin>
-        <TableView fx:id="tblDataset" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="305.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
+        <TableView fx:id="tblDataset" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="300.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
             <columns>
-                <TableColumn fx:id="_X" editable="false" maxWidth="100.0" minWidth="171.5" prefWidth="100.0" resizable="false" text="X" />
-                <TableColumn fx:id="_Y" maxWidth="100.0" minWidth="171.5" prefWidth="100.0" text="Y" />
+                <TableColumn fx:id="_X" editable="false" maxWidth="300.0" minWidth="-Infinity" prefWidth="150.0" resizable="false" styleClass="centered-table-column" text="X" />
+                <TableColumn fx:id="_Y" maxWidth="300.0" minWidth="-Infinity" prefWidth="150.0" resizable="false" styleClass="centered-table-column" text="Y" />
             </columns>
         </TableView>
     </GridPane>
