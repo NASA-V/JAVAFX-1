@@ -91,13 +91,16 @@ public class HelloController {
         int y = Integer.parseInt(tfY_Axis.getText());
 
 
+
         if (!tfX_Axis.getText().isEmpty() && !tfY_Axis.getText().isEmpty()) {
 //            insertAll_Series(Double.parseDouble(tfX_Axis.getText()), Double.parseDouble(tfY_Axis.getText()));
             tfX_Axis.setText("0");
             tfY_Axis.setText("0");
             All_Series series = new All_Series(x, y);
-            setseries(series);
             tblDataset.getItems().add(series);
+
+
+
         } else {
             Alert alert = new Alert(Alert.AlertType.NONE, "Must Enter a number", ButtonType.OK);
             alert.showAndWait();
@@ -134,50 +137,7 @@ public class HelloController {
         tblDataset.setItems(null);
 
         counter++;
-        try {
-            Connection conn = this.connect();
-            Statement stmt = conn.createStatement();
-            ResultSet res = null;
-            res = stmt.executeQuery("SELECT name from sqlite_master where type='table' and name = 'All_Series'");
-            if (!res.next()) {
-                stmt.execute("create table All_Series(_id INT default 1,_X  DOUBLE precision,_Y  DOUBLE precision)");
-            }
-
-            PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO All_Series VALUES (?,?,?)");
-            preparedStatement.setDouble(1, this.counter);
-            double x;
-            double y;
-
-
-//                x = Double.parseDouble(tblDataset.getItems(i, 0).toString());
-//                y = Double.parseDouble(tblDataset.getValueAt(i, 1).toString());
-
-//
-//                String query = "insert into All_Series values(?,?,?)";
-//                PreparedStatement statement = conn.prepareStatement(query);
-//                statement.setDouble(1, this.counter);
-//                statement.setDouble(2, x);
-//                statement.setDouble(3, y);
-//                statement.executeUpdate();
-            res.close();
-            stmt.close();
-            conn.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-       /* EventHandler<ActionEvent> SelectedSeries =
-                new EventHandler<ActionEvent>() {
-                    public void handle(ActionEvent e)
-                    {
-                        if(cmbSeries_List.getValue().equalsIgnoreCase())
-                        selected.setText(combo_box.getValue() + " selected");
-                    }
-                };*/
-
+        //create and insert series names table
         btnEnter.setDisable(false);
         btnCancel.setDisable(false);
         tfY_Axis.setDisable(false);
@@ -225,10 +185,11 @@ public class HelloController {
 //        tblDataset.setItems(series);
 //        _id.setCellValueFactory(new PropertyValueFactory<>("_id"));
         btnGenerate.setDisable(true);
-        btnAddSeries.setDisable(true);
         btnDatalist.setDisable(true);
         btnCancel.setDisable(true);
-
+        btnEnter.setDisable(true);
+        tfX_Axis.setDisable(true);
+        tfY_Axis.setDisable(true);
 
 
     }
